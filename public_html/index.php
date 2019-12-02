@@ -25,6 +25,8 @@ $app = new MyApp\Controller\Index();
   <form action="./index.php" method="POST" id="postMessage">
     <span class="inputLabel">名前</span>
     <input type="text" name="u_name" placeholder="１０字以内" size="20">
+    <span class="inputLabel">タイトル</span>
+    <input type="text" name="u_name" placeholder="１０字以内" size="20">
     <span class="inputLabel">投稿内容</span>
     <textarea name="content" placeholder="１５０字以内" cols="40" rows="6"></textarea>
     <input type="submit" class="btn" name="add" value="投稿する">
