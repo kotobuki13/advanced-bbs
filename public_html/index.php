@@ -22,13 +22,15 @@ $app = new MyApp\Controller\Index();
 
   <h1>Advanced BBS</h1>
   <!-- トッピク投稿フォーム -->
-  <form action="./index.php" method="POST" id="postMessage">
+  <form action="" method="POST">
     <span class="inputLabel">名前</span>
-    <input type="text" name="u_name" placeholder="１０字以内" size="20">
-    <span class="inputLabel">タイトル</span>
-    <input type="text" name="u_name" placeholder="１０字以内" size="20">
+    <input type="text" name="u_name" placeholder="10字以内" size="20">
+    <span class="inputLabel">トピックタイトル</span>
+    <input type="text" name="title" placeholder="20字以内" size="40">
     <span class="inputLabel">投稿内容</span>
-    <textarea name="content" placeholder="１５０字以内" cols="40" rows="6"></textarea>
+    <textarea name="content" placeholder="150字以内" cols="40" rows="6"></textarea>
+    <span class="inputLabel">削除用パスワード</span>
+    <input type="password" name="password" placeholder="8字以上15字以内" size="15">
     <input type="submit" class="btn" name="add" value="投稿する">
   </form>
 
