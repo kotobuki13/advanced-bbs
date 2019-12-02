@@ -1,0 +1,51 @@
+body {
+  background: #F2FAEC;
+}
+
+h1, h2{
+  margin: 30px auto;
+  text-align: center;
+}
+
+form {
+  padding: 15px;
+  margin: 0 auto;
+  width: 345px;
+}
+
+.inputLabel {
+  display: block;
+}
+
+input, textarea {
+  margin: 10px 0;
+  outline: none;
+  font-size: 100%;
+  }  
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  color: #FFF;
+  text-decoration: none;
+  cursor: pointer;
+  background: #4CBD09;
+  border-radius: 3px;
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+
+.posts {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.posts li{
+  margin: 20px auto;
+}
+.buttonToRemove{
+  display: inline;
+}
+
