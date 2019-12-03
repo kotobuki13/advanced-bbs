@@ -4,7 +4,7 @@
 require_once(__DIR__ . '/../config/config.php');
 
 $app = new MyApp\Controller\Index();
-
+$app->run();
 
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ $app = new MyApp\Controller\Index();
     <span class="inputLabel">トピックタイトル</span>
     <input type="text" name="title" placeholder="20字以内" size="40">
     <span class="inputLabel">投稿内容</span>
-    <textarea name="content" placeholder="150字以内" cols="40" rows="6"></textarea>
+    <textarea name="u_content" placeholder="150字以内" cols="40" rows="6"></textarea>
     <span class="inputLabel">削除用パスワード</span>
     <input type="password" name="password" placeholder="8字以上15字以内" size="15">
     <input type="submit" class="btn" name="add" value="投稿する">
