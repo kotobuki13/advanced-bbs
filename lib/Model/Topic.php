@@ -8,12 +8,15 @@ class Topic extends \MyApp\Model
     {
         $stmt = $this->db->prepare("insert into topics (title, created)
   values (:title, now())");
-
-        if ($values['title'] === "") {
-            $values['title'] = "無題";
-        }
         $stmt->execute([
           ':title' => $values['title']
         ]);
+    }
+    public function getLatestIdOfTopic()
+    {
+        $stmt = $this->db->prepare("select id from topics order by id desc limit 1");
+        $stmt->execute();
+        $result = $stmt->fetch(); // $result = { id => x, id => y};
+        return $result[0];
     }
 }
