@@ -19,15 +19,15 @@ class Index extends \MyApp\Controller
       ]);
 
         $belong_to = $topicModel->getLatestIdOfTopic();
-
-        // $messageModel = new \MyApp\Model\Message(); // 一つ目のレスを作成
-        // $messageModel->create([
-        //   'belong_to' => $belong_to,
-        //   'u_name' => $_POST['u_name'],
-        //   'u_content' => $_POST['u_content'],
-        //   'password' => $_POST['password'],
-        //   'first' => true
-        // ]);
+    
+        $messageModel = new \MyApp\Model\Message(); // 一つ目のレスを作成
+        $messageModel->create([
+          'belong_to' => $belong_to,
+          'u_name' => $_POST['u_name'],
+          'u_content' => $_POST['u_content'],
+          'password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
+          'first' => 1
+        ]);
 
         header('Location: http://' . SITE_URL);
         exit;
