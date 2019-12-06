@@ -39,5 +39,14 @@ input, textarea {
   opacity: 0.8;
 }
 
+.posts{
+  margin: 0 auto;
+  width: 600px;
+}
+
+.posts li {
+  margin: 30px 0;
+}
+
 
 

@@ -41,6 +41,15 @@ $app->run();
       <?php foreach ($app->getTopics()->topics as $topic) : ?>
       <li>
         <?= h($topic['title']); ?>
+        <ul>
+          <?php foreach ($app->getMessages($topic['id']) as $message) : ?>
+          <li>
+            <?= h($message['u_content']); ?> from
+            <?= h($message['u_name']); ?>　
+            ( <?= h($message['created']); ?> )
+          </li>
+          <?php endforeach; ?>
+        </ul>
       </li>
       <?php endforeach; ?>
     </ul>

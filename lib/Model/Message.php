@@ -17,4 +17,12 @@ class Message extends \MyApp\Model
           ':first' => $values['first']
         ]);
     }
+
+    public function findMessagesMatch($topicId)
+    {
+        $stmt = $this->db->prepare("select * from messages where belong_to = :topicId order by id");
+        $stmt->execute([':topicId' => $topicId]);
+        $result = $stmt->fetchAll();
+        return $result;
+    }
 }
