@@ -19,4 +19,12 @@ class Topic extends \MyApp\Model
         $result = $stmt->fetch(); // $result = { id => x, id => y};
         return $result[0];
     }
+
+    public function findAllTopics()
+    {
+        $stmt = $this->db->prepare("select * from topics order by id desc");
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
 }

@@ -6,6 +6,9 @@ class Index extends \MyApp\Controller
 {
     public function run()
     {
+        $topicsModel = new \MyApp\Model\Topic();  //トピックテーブルから全件取得
+        $this->setTopics('topics', $topicsModel->findAllTopics());
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') { // POSTされたか
             $this->addTopic();
         }

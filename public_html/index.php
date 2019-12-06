@@ -35,6 +35,17 @@ $app->run();
   </form>
 
   <h2>Topics</h2>
+  <!-- トピック一覧 -->
+  <div class="posts">
+    <ul>
+      <?php foreach ($app->getTopics()->topics as $topic) : ?>
+      <li>
+        <?= h($topic['title']); ?>
+      </li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+
 
 </body>
 
