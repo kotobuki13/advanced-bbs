@@ -22,7 +22,7 @@ $app->run();
 
   <h1>Advanced BBS</h1>
   <!-- トッピク投稿フォーム -->
-  <form action="" method="POST">
+  <form action="" method="POST" class="formToPostTopic">
     <span class="inputLabel">名前</span>
     <input type="text" name="u_name" placeholder="10字以内" size="20">
     <span class="inputLabel">トピックタイトル</span>
@@ -40,7 +40,7 @@ $app->run();
     <ul>
       <?php foreach ($app->getTopics()->topics as $topic) : ?>
       <li>
-        <?= h($topic['title']); ?>
+        <span class="topicTitle"><?= h($topic['title']); ?></span>
         <!-- 返信ボタン -->
         <form class="buttonToReply" method="GET" action="./reply.php">
           <input type="hidden" name="idOfTopicUserReplyTo"

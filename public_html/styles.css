@@ -10,7 +10,17 @@ h1, h2{
 form {
   padding: 15px;
   margin: 0 auto;
-  width: 345px;
+  width: 400px;
+}
+
+.formToPostTopic {
+  padding-bottom: 40px;
+  border-bottom: 1px solid black;
+}
+
+.formToReply {
+  margin-top: 50px;
+  border-top: 1px solid black;
 }
 
 .inputLabel {
@@ -46,6 +56,11 @@ input, textarea {
 
 .posts li, .post li {
   margin: 30px 0;
+}
+
+.topicTitle{
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .buttonToReply {

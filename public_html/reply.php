@@ -3,6 +3,8 @@
 // トップ画面
 require_once(__DIR__ . '/../config/config.php');
 
+echo $_SERVER['PHP_SELF'];
+
 $app = new MyApp\Controller\Reply();
 $app->run();
 
@@ -24,7 +26,7 @@ $app->run();
     <ul>
       <li>
         <?php $topic = $app->getTopics()->topicUserReplyTo; ?>
-        <?= h($topic['title']); ?>
+        <span class="topicTitle"><?= h($topic['title']); ?></span>
         <ul>
           <?php foreach ($app->getMessages($topic['id']) as $message) : ?>
           <li>
@@ -37,6 +39,19 @@ $app->run();
       </li>
     </ul>
   </div>
+
+  <!-- トッピク返信フォーム -->
+  <form action="" method="POST" class="formToReply">
+    <input type="hidden" name="belong_to"
+      value="<?= h($topic['id']); ?>">
+    <span class="inputLabel">名前</span>
+    <input type="text" name="u_name" placeholder="10字以内" size="20">
+    <span class="inputLabel">返信内容</span>
+    <textarea name="u_content" placeholder="150字以内" cols="40" rows="6"></textarea>
+    <span class="inputLabel">削除用パスワード</span>
+    <input type="password" name="password" placeholder="8字以上15字以内" size="15">
+    <input type="submit" class="btn" name="add" value="返信する">
+  </form>
 
 </body>
 
