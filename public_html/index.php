@@ -20,7 +20,9 @@ $app->run();
 
 <body>
 
-  <h1>Advanced BBS</h1>
+  <h1>
+    <a class="linkToTop" href="./index.php">Advanced BBS</a>
+  </h1>
   <!-- トッピク投稿フォーム -->
   <form action="" method="POST" class="formToPostTopic">
     <span class="inputLabel">名前</span>

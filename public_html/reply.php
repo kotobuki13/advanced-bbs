@@ -3,8 +3,6 @@
 // トップ画面
 require_once(__DIR__ . '/../config/config.php');
 
-echo $_SERVER['PHP_SELF'];
-
 $app = new MyApp\Controller\Reply();
 $app->run();
 
@@ -21,7 +19,9 @@ $app->run();
 </head>
 
 <body>
-  <h1>Advanced BBS</h1>
+  <h1>
+    <a class="linkToTop" href="./index.php">Advanced BBS</a>
+  </h1>
   <div class="post">
     <ul>
       <li>
