@@ -18,7 +18,7 @@ class Message extends \MyApp\Model
         ]);
     }
 
-    public function findMessagesMatch($topicId)
+    public function findMessagesBelongTo($topicId)
     {
         $stmt = $this->db->prepare("select * from messages where belong_to = :topicId order by id");
         $stmt->execute([':topicId' => $topicId]);

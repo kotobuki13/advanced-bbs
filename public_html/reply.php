@@ -4,7 +4,7 @@
 require_once(__DIR__ . '/../config/config.php');
 
 $app = new MyApp\Controller\Reply();
-
+$app->run();
 
 ?>
 <!DOCTYPE html>
@@ -19,7 +19,24 @@ $app = new MyApp\Controller\Reply();
 </head>
 
 <body>
-
+  <h1>Advanced BBS</h1>
+  <div class="post">
+    <ul>
+      <li>
+        <?php $topic = $app->getTopics()->topicUserReplyTo; ?>
+        <?= h($topic['title']); ?>
+        <ul>
+          <?php foreach ($app->getMessages($topic['id']) as $message) : ?>
+          <li>
+            <?= h($message['u_content']); ?> from
+            <?= h($message['u_name']); ?>　
+            ( <?= h($message['created']); ?> )
+          </li>
+          <?php endforeach; ?>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
 </body>
 

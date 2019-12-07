@@ -11,13 +11,19 @@ class Controller
         $this->_valueOfTopics = new \stdClass();
     }
 
-    protected function setTopics($key, $topics)  // 全トピックをセット
+    protected function setTopics($key, $topics)  // トピックをセット
     {
         $this->_valueOfTopics->$key = $topics;
     }
 
     public function getTopics()
     {
-        return $this->_valueOfTopics; // _$valueOfTopics = {:topics($key) => {{:title => x, :created => y}, {:title => α, :created => β} ... }};
+        return $this->_valueOfTopics; // _$valueOfTopics = {:xxx($key) => {{:title => x, :created => y}, ... }};
+    }
+
+    public function getMessages($topicId)
+    {
+        $messageModel = new \MyApp\Model\Message();
+        return $messageModel->findMessagesBelongTo($topicId);
     }
 }

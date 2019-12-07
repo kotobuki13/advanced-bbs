@@ -39,13 +39,17 @@ input, textarea {
   opacity: 0.8;
 }
 
-.posts{
+.posts, .post{
   margin: 0 auto;
   width: 600px;
 }
 
-.posts li {
+.posts li, .post li {
   margin: 30px 0;
+}
+
+.buttonToReply {
+  display: inline;
 }
 
 

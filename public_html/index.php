@@ -41,6 +41,12 @@ $app->run();
       <?php foreach ($app->getTopics()->topics as $topic) : ?>
       <li>
         <?= h($topic['title']); ?>
+        <!-- 返信ボタン -->
+        <form class="buttonToReply" method="GET" action="./reply.php">
+          <input type="hidden" name="idOfTopicUserReplyTo"
+            value="<?= h($topic['id']); ?>">
+          <input type="submit" value="返信">
+        </form>
         <ul>
           <?php foreach ($app->getMessages($topic['id']) as $message) : ?>
           <li>

@@ -35,10 +35,4 @@ class Index extends \MyApp\Controller
         header('Location: http://' . SITE_URL);
         exit;
     }
-
-    public function getMessages($topicId)
-    {
-        $messageModel = new \MyApp\Model\Message();
-        return $messageModel->findMessagesMatch($topicId);
-    }
 }
