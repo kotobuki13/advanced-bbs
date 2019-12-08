@@ -1,7 +1,7 @@
 <?php
 
 // トップ画面
-require_once(__DIR__ . '/../config/config.php');
+require_once(__DIR__ . '/../settings/config.php');
 
 $app = new MyApp\Controller\Reply();
 $app->run();
