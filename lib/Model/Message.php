@@ -20,6 +20,21 @@ class Message extends \MyApp\Model
 
     public function delete($values)
     {
+        if ($values['first'] === false) {
+            $stmt = $this->db->prepare("delete from messages where id = :messageId");
+            $stmt->execute([
+                ':messageId' => $values['id']
+            ]);
+            $deleteTopicFlg = false;
+        } else {
+            $stmt = $this->db->prepare("delete from messages where belong_to = :topicIdMessageBelongTo");
+            $stmt->execute([
+                ':topicIdMessageBelongTo' => $values['belong_to']
+            ]);
+            $deleteTopicFlg = true;
+        }
+
+        return $deleteTopicFlg;
     }
 
     public function findMessagesBelongTo($topicId)

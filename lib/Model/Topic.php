@@ -12,6 +12,15 @@ class Topic extends \MyApp\Model
           ':title' => $values['title']
         ]);
     }
+
+    public function delete($values)
+    {
+        $stmt = $this->db->prepare("delete from topics where id = :topicIdMessageBelongTo");
+        $stmt->execute([
+                ':topicIdMessageBelongTo' => $values['id']
+            ]);
+    }
+
     public function getLatestIdOfTopic()
     {
         $stmt = $this->db->prepare("select id from topics order by id desc limit 1");

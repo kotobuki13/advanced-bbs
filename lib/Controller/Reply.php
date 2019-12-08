@@ -12,15 +12,15 @@ class Reply extends \MyApp\Controller
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') { // POSTされたか
-            $this->addMessage($_POST['belong_to']);
+            $this->addMessage();
         }
     }
 
-    private function addMessage($topicId) // メッセージの作成
+    private function addMessage() // メッセージの作成
     {
         $messageModel = new \MyApp\Model\Message();
         $messageModel->create([
-          'belong_to' => $topicId,
+          'belong_to' => $_POST['belong_to'],
           'u_name' => $_POST['u_name'],
           'u_content' => $_POST['u_content'],
           'password' => password_hash($_POST['password'], PASSWORD_BCRYPT),

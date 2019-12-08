@@ -37,9 +37,13 @@ $app->run();
   <form action="" method="POST" class="formToRemove">
     <input type="hidden" name="messageId"
       value="<?= h($message['id']); ?>">
+    <input type="hidden" name="topicIdMessageBelongTo"
+      value="<?= h($message['belong_to']); ?>">
+    <input type="hidden" name="messageFirstFlg"
+      value="<?= h($message['first']); ?>">
     <span class="inputLabel">削除用パスワード</span>
     <input type="password" name="password" placeholder="8字以上15字以内" size="15">
-    <input type="submit" class="btn" name="add" value="削除する">
+    <input type="submit" class="btn" name="remove" value="削除する">
   </form>
 
 </body>
