@@ -55,6 +55,11 @@ $app->run();
             <?= h($message['u_content']); ?> from
             <?= h($message['u_name']); ?>　
             ( <?= h($message['created']); ?> )
+            <form class="buttonToRemove" method="GET" action="./remove.php">
+              <input type="hidden" name="messageId"
+                value="<?= h($message['id']); ?>">
+              <input type="submit" value="x">
+            </form>
           </li>
           <?php endforeach; ?>
         </ul>
