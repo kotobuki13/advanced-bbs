@@ -52,4 +52,21 @@ class Message extends \MyApp\Model
         $result = $stmt->fetch(); // $result = { :id => x, :title => y};
         return $result;
     }
+
+    public function authentication($values)
+    {
+        $stmt = $this->db->prepare("select password from messages where id = :messageId");
+        $stmt->execute([':messageId' => $values['messageId']]);
+        $messageInfo = $stmt->fetch();  // $messageInfo = { :password => xyz};
+
+        if (empty($messageInfo)) {
+            return false;
+        }
+
+        if (!password_verify($values['password'], $messageInfo['password'])) {
+            return false;
+        }
+
+        return true;
+    }
 }

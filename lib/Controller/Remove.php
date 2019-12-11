@@ -21,7 +21,17 @@ class Remove extends \MyApp\Controller
 
     private function verifyPassword() // パスワードのチェック
     {
-        $this->deleteMessage();
+        $values = [
+            'messageId' => $_POST['messageId'],
+            'password' => $_POST['password']
+        ];
+
+        $messageModel = new \MyApp\Model\Message();
+        if ($messageModel->authentication($values)) {
+            $this->deleteMessage();
+        } else {
+            echo 'エラー'; // パスワードエラー表示処理(未実装)
+        }
     }
 
     private function deleteMessage() // メッセージ削除処理
