@@ -36,6 +36,14 @@ $app->run();
     <input type="submit" class="btn" name="add" value="投稿する">
   </form>
 
+  <ul>
+    <?php foreach ($app->errors as $error) : ?>
+    <li class="errorMessages">
+      <?= h($error); ?>
+    </li>
+    <?php endforeach; ?>
+  </ul>
+
   <h2>Topics</h2>
   <!-- トピック一覧 -->
   <div class="posts">
