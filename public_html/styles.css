@@ -52,12 +52,6 @@ input, textarea {
   opacity: 0.8;
 }
 
-.errorMessages {
-  text-align: center;
-  list-style-type: none;
-  color: red;
-}
-
 .posts, .post, .message{
   margin: 0 auto;
   width: 600px;

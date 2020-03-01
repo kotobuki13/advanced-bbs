@@ -9,7 +9,8 @@ class Model
     public function __construct()
     {
         try {
-            $this->db = new \PDO(DSN, DB_USERNAME, DB_PASSWORD);
+            require '../vendor/autoload.php';
+            $this->db = new \PDO('mysql:dbname=heroku_72675c89102211a;host=us-cdbr-iron-east-04.cleardb.net', 'b811cfd83b0539', 'xxx');
         } catch (\PDOException $e) {
             echo $e->getMessage();
             exit;

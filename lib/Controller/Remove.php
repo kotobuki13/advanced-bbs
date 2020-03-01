@@ -30,7 +30,8 @@ class Remove extends \MyApp\Controller
         if ($messageModel->authentication($values)) {
             $this->deleteMessage();
         } else {
-            echo 'エラー'; // パスワードエラー表示処理(未実装)
+            header('Location: http://' . SITE_URL);
+            exit; // パスワードエラー表示処理(未実装)
         }
     }
 
